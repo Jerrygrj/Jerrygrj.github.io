@@ -1,0 +1,216 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>30-浅拷贝和深拷贝 | Jerry's Blog</title><meta name="author" content="Jerry"><meta name="copyright" content="Jerry"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="概念 浅拷贝：只拷贝最外面一层的数据；更深层次的对象，只拷贝引用。  深拷贝：拷贝多层数据；每一层级别的数据都会拷贝。   总结： 拷贝引用的时候，是属于传址，而非传值。关于传值和传址的区别，是很基础的内容，详见《JavaScript 基础&#x2F;对象简介.md》这篇文章。 深拷贝会把对象里所有的数据重新复制到新的内存空间，是最彻底的拷贝。 浅拷贝的实现方式用 for in 实现浅拷贝（比较">
+<meta property="og:type" content="article">
+<meta property="og:title" content="30-浅拷贝和深拷贝">
+<meta property="og:url" content="http://example.com/posts/25943.html">
+<meta property="og:site_name" content="Jerry&#39;s Blog">
+<meta property="og:description" content="概念 浅拷贝：只拷贝最外面一层的数据；更深层次的对象，只拷贝引用。  深拷贝：拷贝多层数据；每一层级别的数据都会拷贝。   总结： 拷贝引用的时候，是属于传址，而非传值。关于传值和传址的区别，是很基础的内容，详见《JavaScript 基础&#x2F;对象简介.md》这篇文章。 深拷贝会把对象里所有的数据重新复制到新的内存空间，是最彻底的拷贝。 浅拷贝的实现方式用 for in 实现浅拷贝（比较">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="article:published_time" content="2023-03-05T10:46:35.007Z">
+<meta property="article:modified_time" content="2023-03-05T10:46:38.064Z">
+<meta property="article:author" content="Jerry">
+<meta property="article:tag" content="JavaScript基础">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/posts/25943.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '30-浅拷贝和深拷贝',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-03-05 18:46:38'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">94</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Jerry's Blog"><span class="site-name">Jerry's Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">30-浅拷贝和深拷贝</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-03-05T10:46:35.007Z" title="发表于 2023-03-05 18:46:35">2023-03-05</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-03-05T10:46:38.064Z" title="更新于 2023-03-05 18:46:38">2023-03-05</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/">前端相关</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="30-浅拷贝和深拷贝"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p><ArticleTopAd></ArticleTopAd></p>
+<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><ul>
+<li><p>浅拷贝：只拷贝最外面一层的数据；更深层次的对象，只拷贝引用。</p>
+</li>
+<li><p>深拷贝：拷贝多层数据；每一层级别的数据都会拷贝。</p>
+</li>
+</ul>
+<p><strong>总结</strong>：</p>
+<p>拷贝引用的时候，是属于<strong>传址</strong>，而非<strong>传值</strong>。关于传值和传址的区别，是很基础的内容，详见《JavaScript 基础&#x2F;对象简介.md》这篇文章。</p>
+<p>深拷贝会把对象里<strong>所有的数据</strong>重新复制到新的内存空间，是最彻底的拷贝。</p>
+<h2 id="浅拷贝的实现方式"><a href="#浅拷贝的实现方式" class="headerlink" title="浅拷贝的实现方式"></a>浅拷贝的实现方式</h2><h3 id="用-for-in-实现浅拷贝（比较繁琐）"><a href="#用-for-in-实现浅拷贝（比较繁琐）" class="headerlink" title="用 for in 实现浅拷贝（比较繁琐）"></a>用 for in 实现浅拷贝（比较繁琐）</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj1 = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;qianguyihao&#x27;</span>,</span><br><span class="line">    <span class="attr">age</span>: <span class="number">28</span>,</span><br><span class="line">    <span class="attr">info</span>: &#123;</span><br><span class="line">        <span class="attr">desc</span>: <span class="string">&#x27;很厉害&#x27;</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> obj2 = &#123;&#125;;</span><br><span class="line"><span class="comment">//  用 for in 将 obj1 的值拷贝给 obj2</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">in</span> obj1) &#123;</span><br><span class="line">    obj2[key] = obj1[key];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;obj2:&#x27;</span> + <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(obj2));</span><br><span class="line"></span><br><span class="line">obj1.<span class="property">info</span>.<span class="property">desc</span> = <span class="string">&#x27;永不止步&#x27;</span>; <span class="comment">// 当修改 obj1 的第二层数据时，obj2的值也会被改变。所以  for in 是浅拷贝</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;obj2:&#x27;</span> + <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(obj2));</span><br></pre></td></tr></table></figure>
+
+<p>上方代码中，用 for in 做拷贝时，只能做到浅拷贝。也就是说，在 obj2 中， name 和 age 这两个属性会单独存放在新的内存地址中，和 obj1 没有关系。但是，<code>obj2.info</code> 属性，跟 <code>obj1.info</code>属性，<strong>它俩指向的是同一个堆内存地址</strong>。所以，当我修改 <code>obj1.info</code> 里的值之后，<code>obj2.info</code>的值也会被修改。</p>
+<p>打印结果如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">obj2:&#123;&quot;name&quot;:&quot;qianguyihao&quot;,&quot;age&quot;:28,&quot;info&quot;:&#123;&quot;desc&quot;:&quot;很厉害&quot;&#125;&#125;</span><br><span class="line"></span><br><span class="line">obj2:&#123;&quot;name&quot;:&quot;qianguyihao&quot;,&quot;age&quot;:28,&quot;info&quot;:&#123;&quot;desc&quot;:&quot;永不止步&quot;&#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="用-Object-assgin-实现浅拷贝（推荐的方式）"><a href="#用-Object-assgin-实现浅拷贝（推荐的方式）" class="headerlink" title="用 Object.assgin() 实现浅拷贝（推荐的方式）"></a>用 Object.assgin() 实现浅拷贝（推荐的方式）</h3><p>上面的 for in 方法做浅拷贝过于繁琐。ES6 给我们提供了新的语法糖，通过 <code>Object.assgin()</code> 可以实现<strong>浅拷贝</strong>。</p>
+<p><code>Object.assgin()</code> 在日常开发中，使用得相当频繁，非掌握不可。</p>
+<p><strong>语法</strong>：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 语法1</span></span><br><span class="line">obj2 = <span class="title class_">Object</span>.<span class="title function_">assgin</span>(obj2, obj1);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 语法2</span></span><br><span class="line"><span class="title class_">Object</span>.<span class="title function_">assign</span>(目标对象, 源对象<span class="number">1</span>, 源对象<span class="number">2.</span>..);</span><br></pre></td></tr></table></figure>
+
+<p><strong>解释</strong>：将<code>obj1</code> 拷贝给 <code>obj2</code>。执行完毕后，obj2 的值会被更新。</p>
+<p><strong>作用</strong>：将 obj1 的值追加到 obj2 中。如果对象里的属性名相同，会被覆盖。</p>
+<p>从语法2中可以看出，Object.assign() 可以将多个“源对象”拷贝到“目标对象”中。</p>
+<p><strong>例 1</strong>：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj1 = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;qianguyihao&#x27;</span>,</span><br><span class="line">    <span class="attr">age</span>: <span class="number">28</span>,</span><br><span class="line">    <span class="attr">info</span>: &#123;</span><br><span class="line">        <span class="attr">desc</span>: <span class="string">&#x27;hello&#x27;</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 浅拷贝：把 obj1 拷贝给 obj2。如果 obj1 只有一层数据，那么，obj1 和 obj2 则互不影响</span></span><br><span class="line"><span class="keyword">const</span> obj2 = <span class="title class_">Object</span>.<span class="title function_">assign</span>(&#123;&#125;, obj1);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;obj2:&#x27;</span> + <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(obj2));</span><br><span class="line"></span><br><span class="line">obj1.<span class="property">info</span>.<span class="property">desc</span> = <span class="string">&#x27;永不止步&#x27;</span>; <span class="comment">// 由于 Object.assign() 只是浅拷贝，所以当修改 obj1 的第二层数据时，obj2 对应的值也会被改变。</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;obj2:&#x27;</span> + <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(obj2));</span><br></pre></td></tr></table></figure>
+
+<p>代码解释：由于 Object.assign() 只是浅拷贝，所以在当前这个案例中， obj2 中的 name 属性和 age 属性是单独存放在新的堆内存地址中的，和 obj1 没有关系；但是，<code>obj2.info</code> 属性，跟 <code>obj1.info</code>属性，<strong>它俩指向的是同一个堆内存地址</strong>。所以，当我修改 <code>obj1.info</code> 里的值之后，<code>obj2.info</code>的值也会被修改。</p>
+<p>打印结果：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">obj2:&#123;&quot;name&quot;:&quot;qianguyihao&quot;,&quot;age&quot;:28,&quot;info&quot;:&#123;&quot;desc&quot;:&quot;hello&quot;&#125;&#125;</span><br><span class="line"></span><br><span class="line">obj2:&#123;&quot;name&quot;:&quot;qianguyihao&quot;,&quot;age&quot;:28,&quot;info&quot;:&#123;&quot;desc&quot;:&quot;永不止步&quot;&#125;&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>例 2</strong>：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myObj = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;qianguyihao&#x27;</span>,</span><br><span class="line">    <span class="attr">age</span>: <span class="number">28</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 【写法1】浅拷贝：把 myObj 拷贝给 obj1</span></span><br><span class="line"><span class="keyword">const</span> obj1 = &#123;&#125;;</span><br><span class="line"><span class="title class_">Object</span>.<span class="title function_">assign</span>(obj1, myObj);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 【写法2】浅拷贝：把 myObj 拷贝给 obj2</span></span><br><span class="line"><span class="keyword">const</span> obj2 = <span class="title class_">Object</span>.<span class="title function_">assign</span>(&#123;&#125;, myObj);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 【写法3】浅拷贝：把 myObj 拷贝给 obj31。注意，这里的 obj31 和 obj32 其实是等价的，他们指向了同一个内存地址</span></span><br><span class="line"><span class="keyword">const</span> obj31 = &#123;&#125;;</span><br><span class="line"><span class="keyword">const</span> obj32 = <span class="title class_">Object</span>.<span class="title function_">assign</span>(obj31, myObj);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>上面这三种写法，是等价的。所以，当我们需要将对象 A 复制（拷贝）给对象 B，不要直接使用 <code>B = A</code>，而是要使用 Object.assign(B, A)。</p>
+<p><strong>例 3</strong>：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj1 = &#123; <span class="attr">name</span>: <span class="string">&#x27;qianguyihao&#x27;</span>, <span class="attr">age</span>: <span class="number">26</span> &#125;;</span><br><span class="line"><span class="keyword">let</span> obj2 = &#123; <span class="attr">city</span>: <span class="string">&#x27;shenzhen&#x27;</span>, <span class="attr">age</span>: <span class="number">28</span> &#125;;</span><br><span class="line"><span class="keyword">let</span> obj3 = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Object</span>.<span class="title function_">assign</span>(obj3, obj1, obj2); <span class="comment">// 将 obj1、obj2的内容赋值给 obj3</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(obj3); <span class="comment">// &#123;name: &quot;qianguyihao&quot;, age: 28, city: &quot;shenzhen&quot;&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>上面的代码，可以理解成：将多个对象（obj1和obj2）合并成一个对象 obj3。</p>
+<p><strong>例4</strong>：【重要】</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj1 = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;qianguyihao&#x27;</span>,</span><br><span class="line">    <span class="attr">age</span>: <span class="number">28</span>,</span><br><span class="line">    <span class="attr">desc</span>: <span class="string">&#x27;hello world&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> obj2 = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;许嵩&#x27;</span>,</span><br><span class="line">    <span class="attr">sex</span>: <span class="string">&#x27;男&#x27;</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 浅拷贝：把 obj1 赋值给 obj2。这一行，是关键代码。这行代码的返回值也是 obj2</span></span><br><span class="line"><span class="title class_">Object</span>.<span class="title function_">assign</span>(obj2, obj1);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">JSON</span>.<span class="title function_">stringify</span>(obj2));</span><br></pre></td></tr></table></figure>
+
+<p>打印结果：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;name&quot;:&quot;qianguyihao&quot;,</span><br><span class="line">    &quot;sex&quot;:&quot;男&quot;,</span><br><span class="line">    &quot;age&quot;:28,</span><br><span class="line">    &quot;desc&quot;:&quot;hello world&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意，<strong>例 4 在实际开发中，会经常遇到，一定要掌握</strong>。它的作用是：将 obj1 的值追加到 obj2 中。如果两个对象里的属性名相同，则 obj2 中的值会被 obj1 中的值覆盖。</p>
+<h2 id="深拷贝的实现方式"><a href="#深拷贝的实现方式" class="headerlink" title="深拷贝的实现方式"></a>深拷贝的实现方式</h2><p>深拷贝其实就是将浅拷贝进行递归。</p>
+<h3 id="用-for-in-递归实现深拷贝"><a href="#用-for-in-递归实现深拷贝" class="headerlink" title="用 for in 递归实现深拷贝"></a>用 for in 递归实现深拷贝</h3><p>代码实现：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj1 = &#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&#x27;qianguyihao&#x27;</span>,</span><br><span class="line">    <span class="attr">age</span>: <span class="number">28</span>,</span><br><span class="line">    <span class="attr">info</span>: &#123;</span><br><span class="line">        <span class="attr">desc</span>: <span class="string">&#x27;hello&#x27;</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">color</span>: [<span class="string">&#x27;red&#x27;</span>, <span class="string">&#x27;blue&#x27;</span>, <span class="string">&#x27;green&#x27;</span>],</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">let</span> obj2 = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="title function_">deepCopy</span>(obj2, obj1);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(obj2);</span><br><span class="line">obj1.<span class="property">info</span>.<span class="property">desc</span> = <span class="string">&#x27;github&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(obj2);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 方法：深拷贝</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">deepCopy</span>(<span class="params">newObj, oldObj</span>) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">in</span> oldObj) &#123;</span><br><span class="line">        <span class="comment">// 获取属性值 oldObj[key]</span></span><br><span class="line">        <span class="keyword">let</span> item = oldObj[key];</span><br><span class="line">        <span class="comment">// 判断这个值是否是数组</span></span><br><span class="line">        <span class="keyword">if</span> (item <span class="keyword">instanceof</span> <span class="title class_">Array</span>) &#123;</span><br><span class="line">            newObj[key] = [];</span><br><span class="line">            <span class="title function_">deepCopy</span>(newObj[key], item);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (item <span class="keyword">instanceof</span> <span class="title class_">Object</span>) &#123;</span><br><span class="line">            <span class="comment">// 判断这个值是否是对象</span></span><br><span class="line">            newObj[key] = &#123;&#125;;</span><br><span class="line">            <span class="title function_">deepCopy</span>(newObj[key], item);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 简单数据类型，直接赋值</span></span><br><span class="line">            newObj[key] = item;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="赞赏作者"><a href="#赞赏作者" class="headerlink" title="赞赏作者"></a>赞赏作者</h2><p>创作不易，你的赞赏和认可，是我更新的最大动力：</p>
+<p><img src="https://img.smyhvae.com/20220401_1800.jpg"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">Jerry</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/posts/25943.html">http://example.com/posts/25943.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">Jerry's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/JavaScript%E5%9F%BA%E7%A1%80/">JavaScript基础</a></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/38105.html" title="31_1-对象的高级操作（待更新）"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">31_1-对象的高级操作（待更新）</div></div></a></div><div class="next-post pull-right"><a href="/posts/24695.html" title="29-对象的基本操作"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">29-对象的基本操作</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/40608.html" title="00-编程语言简介"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-05</div><div class="title">00-编程语言简介</div></div></a></div><div><a href="/posts/14524.html" title="01-JavaScript简介"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-05</div><div class="title">01-JavaScript简介</div></div></a></div><div><a href="/posts/49940.html" title="02-开始写JavaScript：hello world"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-05</div><div class="title">02-开始写JavaScript：hello world</div></div></a></div><div><a href="/posts/30908.html" title="03-常量和变量"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-05</div><div class="title">03-常量和变量</div></div></a></div><div><a href="/posts/55276.html" title="04-标识符、关键字、保留字"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-05</div><div class="title">04-标识符、关键字、保留字</div></div></a></div><div><a href="/posts/4543.html" title="05-变量的数据类型：基本数据类型和引用数据类型"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-05</div><div class="title">05-变量的数据类型：基本数据类型和引用数据类型</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Jerry</div><div class="author-info__description">生活明朗,万物可爱.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">94</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5"><span class="toc-number">1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%85%E6%8B%B7%E8%B4%9D%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F"><span class="toc-number">2.</span> <span class="toc-text">浅拷贝的实现方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8-for-in-%E5%AE%9E%E7%8E%B0%E6%B5%85%E6%8B%B7%E8%B4%9D%EF%BC%88%E6%AF%94%E8%BE%83%E7%B9%81%E7%90%90%EF%BC%89"><span class="toc-number">2.1.</span> <span class="toc-text">用 for in 实现浅拷贝（比较繁琐）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8-Object-assgin-%E5%AE%9E%E7%8E%B0%E6%B5%85%E6%8B%B7%E8%B4%9D%EF%BC%88%E6%8E%A8%E8%8D%90%E7%9A%84%E6%96%B9%E5%BC%8F%EF%BC%89"><span class="toc-number">2.2.</span> <span class="toc-text">用 Object.assgin() 实现浅拷贝（推荐的方式）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%B1%E6%8B%B7%E8%B4%9D%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F"><span class="toc-number">3.</span> <span class="toc-text">深拷贝的实现方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8-for-in-%E9%80%92%E5%BD%92%E5%AE%9E%E7%8E%B0%E6%B7%B1%E6%8B%B7%E8%B4%9D"><span class="toc-number">3.1.</span> <span class="toc-text">用 for in 递归实现深拷贝</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B5%9E%E8%B5%8F%E4%BD%9C%E8%80%85"><span class="toc-number">4.</span> <span class="toc-text">赞赏作者</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/55595.html" title="常见代码解读">常见代码解读</a><time datetime="2023-03-05T10:46:35.084Z" title="发表于 2023-03-05 18:46:35">2023-03-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/2233.html" title="原型链">原型链</a><time datetime="2023-03-05T10:46:35.081Z" title="发表于 2023-03-05 18:46:35">2023-03-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/17586.html" title="原型对象">原型对象</a><time datetime="2023-03-05T10:46:35.078Z" title="发表于 2023-03-05 18:46:35">2023-03-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/45680.html" title="BOM的常见内置方法和内置对象">BOM的常见内置方法和内置对象</a><time datetime="2023-03-05T10:46:35.075Z" title="发表于 2023-03-05 18:46:35">2023-03-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/2572.html" title="50-jQuery的事件机制和其他知识">50-jQuery的事件机制和其他知识</a><time datetime="2023-03-05T10:46:35.072Z" title="发表于 2023-03-05 18:46:35">2023-03-05</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Jerry</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/"});</script></body></html>
