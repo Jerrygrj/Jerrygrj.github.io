@@ -55,7 +55,7 @@
   isHome: true,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2023-03-05 19:12:43'
+  postUpdate: '2023-03-08 23:19:30'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -159,189 +159,297 @@
       }
     }
     detectApple()
-    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">94</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Jerry's Blog"><span class="site-name">Jerry's Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Jerry's Blog</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/55276.html" title="04-标识符、关键字、保留字">04-标识符、关键字、保留字</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-05T10:46:34.922Z" title="发表于 2023-03-05 18:46:34">2023-03-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/">前端相关</a></span></div><div class="content">
-变量的命名规则（重要）JS是大小敏感的语言。也就是说 A 和 a 是两个变量。大写字母是可以使用的，比如：
-12var A = 250; //变量1var a = 888; //变量2
-
-我们来整理一下变量的命名规则，非常重要。
-必须遵守：
-
-只能由字母(A-Z、a-z)、数字(0-9)、下划线(_)、美元符( $ )组成。
-不能以数字开头。必须以字母(A-Z、a-z)、下划线(_)或者美元符( $ )开头。变量名中不允许出现空格。尤其注意，变量名中不能出现中划线-，很多人写了多年代码都不知道这一点，让人大跌眼镜。
-严格区分大小写（JS 是区分大小写的语言）。
-不能使用 JS 语言中保留的「关键字」和「保留字」作为变量名。下一篇文章会讲。
-变量名长度不能超过 255 个字符。
-
-汉语可以作为变量名。但是不建议使用，因为 low。
-
-建议遵守：
-
-命名要有可读性，方便顾名思义。
-
-建议用驼峰命名法。比如 getElementById、getUserInfo、aaaOrBbbAndCcc
-
-
-补充：
-1、不能以数字开头，是为了把数字和字母区分开。
-2、JS底层保存标识符的时候，是采用的  ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/30908.html" title="03-常量和变量">03-常量和变量</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-05T10:46:34.919Z" title="发表于 2023-03-05 18:46:34">2023-03-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/">前端相关</a></span></div><div class="content">
-常量（字面量）：数字和字符串常量也称之为“字面量”，是固定值，不可改变。看见什么，它就是什么。
-常量有下面这几种：
-
-数字常量（数值常量）
-字符串常量
-布尔常量
-自定义常量
-
-数字常量数字常量非常简单，直接写数字就行，不需要任何其他的符号。既可以是整数，也可以是浮点数。
-例如：
-123// 不需要加引号alert(996); // 996是整数alert(3.14); // 3.14是浮点数（即带了小数）
-
-字符串常量字符串常量就是用单引号或双引号括起来的内容。可以是单词、句子等，一定要加引号。在JS中，只要是单引号或双引号括起来的内容，都是字符串常量。
-例如：
-123console.log(&#x27;996&#x27;);console.log(&quot;千古壹号，永不止步&quot;);
-
-温馨提示：996 是数字，’996’是字符串。
-布尔常量布尔常量就是表达真或者假，在JS中用 true 和 false 来表达。
-布尔字面量举例：
-123if (true) &#123;	console.log(&#x27;如果为真，就走这里面的代码);&#125;
-
-自定义常量：cons ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/49940.html" title="02-开始写JavaScript：hello world">02-开始写JavaScript：hello world</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-05T10:46:34.913Z" title="发表于 2023-03-05 18:46:34">2023-03-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/">前端相关</a></span></div><div class="content">开始写第一行 JavaScript：hello worldJS 代码的书写位置在哪里呢？这个问题，也可以理解成：引入 JS 代码，有哪几种方式？有三种方式：（和 CSS 的引入方式类似）
-
-行内式：写在标签内部。
-
-内嵌式（内联式）：写在 head 标签中。
-
-外链式：引入外部 JS 文件。
-
-
-方式 1：行内式代码举例：
-1&lt;input type=&quot;button&quot; value=&quot;点我点我&quot; onclick=&quot;alert(&#x27;千古壹号 Hello 方式1&#x27;)&quot; /&gt;
-
-完整的可执行代码如下：
-1234567891011&lt;!DOCTYPE html&gt;&lt;html lang=&quot;en&quot;&gt;    &lt;head&gt;        &lt;meta charset=&quot;UTF-8&quot; /&gt;        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/14524.html" title="01-JavaScript简介">01-JavaScript简介</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-05T10:46:34.910Z" title="发表于 2023-03-05 18:46:34">2023-03-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/">前端相关</a></span></div><div class="content">
-JavaScript 历史和发展Web 前端有三层：
-
-HTML：从语义的角度，描述页面结构
-
-CSS：从审美的角度，描述样式（美化页面）
-
-JavaScript（简称 JS）：从交互的角度，描述行为（实现业务逻辑和页面控制）
-
-
-JavaScript 的历史1、JavaScript 诞生于1995 年，是由网景公司（Netscape）的员工 Brendan Eich（兰登 • 艾奇，1961 年～）发明，最初命名为 LiveScript。1995 年 12 月与 SUN 公司合作，因市场宣传需要，为了蹭 Java 的热度，改名为 JavaScript。
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">110</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Jerry's Blog"><span class="site-name">Jerry's Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Jerry's Blog</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/12922.html" title="20-函数简介">20-函数简介</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-05T10:46:34.975Z" title="发表于 2023-03-05 18:46:34">2023-03-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/">前端相关</a></span></div><div class="content">
+函数的介绍函数：就是一些功能或语句的封装。在需要的时候，通过调用的形式，执行这些语句。
 补充：
 
-1994 年网景公司发布历史上第一个比较成熟的浏览器(Navigator 0.9), 但是只能浏览不能交互。1995 年为了解决表单有效性验证就要与服务器进行多次地往返交互问题，网景公司录用 Brendan Eich（兰登 • 艾奇），他只用了 10 天就开发出 LiveScript 语言的第一版。
+函数也是一个对象
+
+使用typeof检查一个函数对象时，会返回 function
 
 
-由于 Sun 公司当时的 Java 语言特别火，所以为了傍大牌，就借势改名为 JavaScript。如同“北大”和“北大 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/40608.html" title="00-编程语言简介">00-编程语言简介</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-05T10:46:34.906Z" title="发表于 2023-03-05 18:46:34">2023-03-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/">前端相关</a></span></div><div class="content">
-编程语言的概念编程编程：让计算机为解决某个问题而使用某种程序设计语言编写程序代码，并最终得到结果的过程。
-计算机程序：就是计算机所执行的一系列的指令集合，而程序全部都是用我们所掌握的语言来编写的，所以人们如果要控制计算机，则需要通过计算机语言向计算机发出命令。
-计算机语言计算机语言：人与计算机之间通讯的语言。它是人与计算机之间传递信息的媒介，用来控制计算机的一系列指令。
-计算机语言的种类非常的多，总的来说可以分成三大类：机器语言、汇编语言和高级语言。
-计算机最终所执行的都是机器语言，它是由“0”和“1”组成的二进制数，二进制是计算机语言的基础。
-编程语言通过类似于人类语言的 ”语言”来控制计算机，让计算机为我们做事情，这样的语言就叫做编程语言。不同的编程语言，有不同的语法，必须遵守。
-如今通用的编程语言有两种形式：汇编语言和高级语言。
+函数的作用：
 
-汇编语言：与机器语言实质是相同的，都是直接对硬件操作，只不过指令采用了英文缩写的标识符，容易识别和记忆。
+一次定义，多次调用。将大量重复的语句抽取出来，写在函数里，以后需要这些语句时，可以直接调用函数，避免重复劳动。
 
-高级语言：主要是相对于低级语言而言，它并不是特指某一种具体的语言，而是包括了很多编程语言，比如：C 语言、C++、Java、C#、PHP、Ja ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/5281.html" title="CSS面试题">CSS面试题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-05T10:35:33.623Z" title="发表于 2023-03-05 18:35:33">2023-03-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/">前端相关</a></span></div><div class="content">
-常见问题你是如何理解 HTML 语义化的？语义化：指对文本内容的结构化（内容语义化），选择合乎语义的标签（代码语义化）。
-举例：段落用 p，边栏用 aside，主要内容用 main 标签。
-好处：
-
-便于开发者阅读和维护
-
-有利于SEO：让浏览器的爬虫和辅助技术更好的解析，
+简化代码，可读性更强，让编程模块化。高内聚、低耦合。
 
 
-语义化标签介绍：
-在HTML5出来之前，我们习惯于用div来表示页面的章节或者不同模块，但是div本身是没有语义的。但是现在，HTML5中加入了一些语义化标签，来更清晰的表达文档结构。
-20180322_1120.jpg
-参考链接：
+来看个例子：
+1234567891011console.log(&quot;你好&quot;);sayHello();	// 调用函数sayHello();	// 再调用一次函数// 定义函数function sayHello()&#123;	console.log(&quot;欢迎&quot;);	console.log(&quot;welcome&quot;);&#125;
 
-初探 · HTML5语义化
-
-meta viewport 是做什么用的，怎么写？1&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0&quot;&gt;
-
-控制页面在移动端不要缩小显示。
-canvas 元素是干什么的？看 MDN 的 canvas  ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/5280.html" title="隐藏盒子的几种方式">隐藏盒子的几种方式</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-05T10:35:33.619Z" title="发表于 2023-03-05 18:35:33">2023-03-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/">前端相关</a></span></div><div class="content">
-隐藏盒子的几种方式隐藏盒子，有以下几种方式：
-（1）方式一：
-1overflow：hidden;   //隐藏盒子超出的部分
+函数的定义&#x2F;声明我们使用function关键字定义函数，中文含义是“函数”、“功能”。可以使用如下方式进行定义。
+方式一：函数声明（命名函数）使用函数声明来创建一个函数。语法：
+123function 函数名([形参1,形参2... ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/32041.html" title="19-数组的常见方法">19-数组的常见方法</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-05T10:46:34.972Z" title="发表于 2023-03-05 18:46:34">2023-03-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/">前端相关</a></span></div><div class="content">
+数组的方法清单数组的类型相关
 
 
-（2）方式二：
-1display: none;	  隐藏盒子，而且不占位置(用的最多)
-
-比如，点击X，关闭京东首页上方的广告栏。
-（3）方式三：
-123visibility: hidden;   //隐藏盒子，占位置。visibility: visible;   //让盒子重新显示
-
-（4）方式四：
-1opacity: 0;       //设置盒子的透明度（不建议，因为内容也会半透明），占位置
-
-
-（4）方式五：
-1Position/top/left/...-999px   //把盒子移得远远的，占位置。
-
-（5）方式六：
-1margin-left: 1000px;
+方法
+描述
+备注
 
 
 
-设置盒子的半透明方式一：opacity: 0.4。优点是方便。缺点是：里面的内容也会半透明。
-方式二：css3的技术来解决半透明。如下：
-
-background: rgba(0,0,0,0.3);
-
-background: rgba(0,0,0,.3);
+Array.isArray()
+判断是否为数组
 
 
-备注：a指的是alpha ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/5279.html" title="CSS文章推荐">CSS文章推荐</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-05T10:35:33.616Z" title="发表于 2023-03-05 18:35:33">2023-03-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/">前端相关</a></span></div><div class="content">
-2020-03-16Bootstrap 中文文档：https://code.z01.com/v4/content/tables.html
-2020-03-13
-CSS实现鼠标悬停弹出微信二维码
 
-</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/5278.html" title="CSS开发积累">CSS开发积累</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-05T10:35:33.613Z" title="发表于 2023-03-05 18:35:33">2023-03-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/">前端相关</a></span></div><div class="content">
-让flex盒子中的子元素们，居中flex布局常用的三行代码：
-123display: flex;justify-content: center; // 子元素在横轴的对齐方式 （左右居中）align-items: center;  // 子元素在竖轴的对齐方式（上下居中）
+toString()
+将数组转换为字符串
+不会改变原数组
 
 
-让文字只显示一行，超出显示省略号1234overflow: hidden;white-space: nowrap;text-overflow: ellipsis;
+join()
+将数组转换为字符串，返回结果为转换后的字符串
+不会改变原数组
 
 
-让文字最多只显示两行，超出后显示省略号12345overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;
+字符串的方法：split()
+将字符串按照指定的分隔符，组装为数组
+不会改变原字符串
 
-参考链接：https://blog.csdn.net/NN_nan/article/details/55045562
-问题描述：文本内容里自带了换行，但是在前端没有展示出来解决办法：增加如下属性即可。
-1white-space: pre-wrap;
 
-或者：
-1white-space ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/7477.html" title="04-如何让一个元素水平垂直居中？">04-如何让一个元素水平垂直居中？</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-05T10:35:33.610Z" title="发表于 2023-03-05 18:35:33">2023-03-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/">前端相关</a></span></div><div class="content">
 
-前言老板的手机收到一个红包，为什么红包没居中？
-如何让一个子元素在父容器里水平垂直居中？这个问题必考，在实战开发中，也应用得非常多。
-你也许能顺手写出好几种实现方法。但大部分人的写法不够规范，经不起千锤百炼。换句话说：这些人也就面试的时候夸夸其谈，但真的上战场的时候，他们不敢这么写，也不知道怎么写最靠谱。
-这篇文章中，我们来列出几种常见的写法，最终你会明白，哪种写法是最优雅的。
-当然，我还会拿出实际应用中的真实场景来举例，让你感受一下标准垂直居中的魅力。
-如何让一个行内元素（文字、图片等）水平垂直居中
-行内元素的居中问题比较简单。
 
-行内元素水平居中给父容器设置：
-12text-align: center;
 
-行内元素垂直居中让文字的行高 等于 盒子的高度，可以让单行文本垂直居中。比如：
-1234.father &#123;    height: 20px;    line-height: 20px;&#125;
 
-如何让一个块级元素水平垂直居中
-这一段是本文的核心。如何让一个块级的子元素在父容器里水平垂直居中？有好几种写法。我们一起来看看。
 
-margin: auto 的问题在  ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/5/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/#content-inner">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/#content-inner">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/#content-inner">10</a><a class="extend next" rel="next" href="/page/7/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Jerry</div><div class="author-info__description">生活明朗,万物可爱.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">94</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/55595.html" title="常见代码解读">常见代码解读</a><time datetime="2023-03-05T10:46:35.084Z" title="发表于 2023-03-05 18:46:35">2023-03-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/2233.html" title="原型链">原型链</a><time datetime="2023-03-05T10:46:35.081Z" title="发表于 2023-03-05 18:46:35">2023-03-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/17586.html" title="原型对象">原型对象</a><time datetime="2023-03-05T10:46:35.078Z" title="发表于 2023-03-05 18:46:35">2023-03-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/45680.html" title="BOM的常见内置方法和内置对象">BOM的常见内置方法和内置对象</a><time datetime="2023-03-05T10:46:35.075Z" title="发表于 2023-03-05 18:46:35">2023-03-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/2572.html" title="50-jQuery的事件机制和其他知识">50-jQuery的事件机制和其他知识</a><time datetime="2023-03-05T10:46:35.072Z" title="发表于 2023-03-05 18:46:35">2023-03-05</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+Array.from(arrayLike)
+将伪数组转化为真数组
+
+
+
+Array.of(value1, value2, value3)
+创建数组：将一系列值转换成数组
+
+
+
+注意：
+（1）获取数组的长度是用length属性，不是方法。关于 length属性，详见上一篇文章。
+（2）split()是字符串的方法，不是数组的方法。
+数组元素的添加和删除
+
+
+方法
+描述
+备注
+
+
+
+push()
+向数组的最后面插入一个或多个元素，返回结果为新数组的长度
+会改变原数组
+
+
+pop()
+删除数组中的最后一个元素，返回结果为被删除的元素
+会改变原数组
+
+
+unshift()
+在数组最前面插入一个或多个元素，返回结果为新数组的长度
+会改变原数组
+
+ ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/47617.html" title="18-数组简介">18-数组简介</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-05T10:46:34.968Z" title="发表于 2023-03-05 18:46:34">2023-03-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/">前端相关</a></span></div><div class="content">
+
+之前学习的数据类型，只能存储一个值（字符串也为一个值）。如果我们想存储多个值，就可以使用数组。
+
+数组简介数组（Array）是属于内置对象，数组和普通对象的功能类似，都可以用来存储一些值。不同的是：
+
+普通对象是使用字符串作为属性名，而数组是使用数字作为索引来操作元素。索引：从 0 开始的整数就是索引。
+
+数组的存储性能比普通对象要好。在实际开发中我们经常使用数组存储一些数据（尤其是列表数据），使用频率非常高。
+
+比如说，上面这个页面的列表数据，它的数据结构就是一个数组。
+数组中的元素可以是任意的数据类型，可以是对象，可以是函数，也可以是数组。数组的元素中，如果存放的是数组，我们就称这种数组为二维数组。
+接下来，我们讲一讲数组的基本操作。
+创建数组对象方式一：使用字面量创建数组举例：
+123let arr1 = []; // 创建一个空的数组let arr2 = [1, 2, 3]; // 创建带初始值的数组
+
+方式一最简单，也用得最多。
+方式二：使用构造函数创建数组语法：
+123let arr = new Array(参数);let arr = Array(参数);
+
+如果参数为 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/6150.html" title="17-内置对象：Date">17-内置对象：Date</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-05T10:46:34.965Z" title="发表于 2023-03-05 18:46:34">2023-03-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/">前端相关</a></span></div><div class="content">
+内置对象：Date
+Date 对象在实际开发中，使用得很频繁，且容易在细节地方出错，需要引起重视。
+
+内置对象 Date 用来处理日期和时间。
+需要注意的是：与 Math 对象不同，Date 对象是一个构造函数 ，需要先实例化后才能使用。
+创建Date对象创建Date对象有两种写法：
+
+写法一：如果Date()不写参数，就返回当前时间对象
+
+写法二：如果Date()里面写参数，就返回括号里输入的时间对象
+
+
+针对这两种写法，我们来具体讲一讲。
+写法一：不传递参数时，则获取系统的当前时间对象代码举例：
+123var date1 = new Date();console.log(date1);console.log(typeof date1);
+
+代码解释：不传递参数时，表示的是获取系统的当前时间对象。也可以理解成是：获取当前代码执行的时间。
+打印结果：
+12Mon Feb 17 2020 21:57:22 GMT+0800 (中国标准时间)object
+
+写法二：传递参数传递参数时，表示获取指定时间的时间对象。参数中既可以传递字符串，也可以传递数字，也可以传递时间戳。
+通过传参的这种写 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/46593.html" title="16-内置对象：Number和Math">16-内置对象：Number和Math</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-05T10:46:34.962Z" title="发表于 2023-03-05 18:46:34">2023-03-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/">前端相关</a></span></div><div class="content">
+内置对象 Number 的常见方法Number.isInteger() 判断是否为整数语法：
+1布尔值 = Number.isInteger(数字);
+
+
+toFixed() 小数点后面保留多少位语法：
+1字符串 = myNum.toFixed(num);
+
+解释：将数字 myNum 的小数点后面保留 num 位小数（四舍五入），并返回。不会改变原数字。注意，返回结果是字符串。
+参数 num：指定了小数点后面的位数。
+举例：
+12345678let num = 3.456;let num2 = num.toFixed(2);console.log(num); // 打印结果：3.456console.log(num2); // 打印结果：3.46console.log(typeof num); // numberconsole.log(typeof num2); // string
+
+上方代码中，num2的结果是3.46，但是请注意，num的类型Number型，而num2的类型却是String型。
+内置对象 Math 的常见方法Math 和其他的对象不同，它不是一个构造函数，不需要创 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/51828.html" title="15-内置对象 String：字符串的常见方法">15-内置对象 String：字符串的常见方法</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-05T10:46:34.959Z" title="发表于 2023-03-05 18:46:34">2023-03-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/">前端相关</a></span></div><div class="content">
+内置对象简介
+JavaScript 中的对象分为3种：自定义对象、内置对象、浏览器对象。
+
+
+前面两种对象：是JS的基础内容，属于 ECMAScript； 第三个浏览器对象：属于JS独有，即 JS 内置的API。
+
+内置对象：就是指这个语言自带的一些对象，供开发者使用，这些对象提供了一些常用或者基本而必要的功能（属性和方法）。
+内置对象最大的优点就是帮助我们快速开发。
+JavaScript的内置对象：
+
+
+
+内置对象
+对象说明
+
+
+
+Arguments
+函数参数集合
+
+
+Array
+数组
+
+
+Boolean
+布尔对象
+
+
+Math
+数学对象
+
+
+Date
+日期时间
+
+
+Error
+异常对象
+
+
+Function
+函数构造器
+
+
+Number
+数值对象
+
+
+Object
+基础对象
+
+
+RegExp
+正则表达式对象
+
+
+String
+字符串对象
+
+
+字符串前言
+在日常开发中，String 对象（字符串对象）的使用频率是非常高的。所以有必要详细介绍。
+
+需要注意的是：字符串的所有方法，都不会改变原字符串（字符串的不可变性），操作完成后会返回一个新的值。
+字符串的常见方法如下。
+查找字符串1 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/38299.html" title="14-基本包装类型">14-基本包装类型</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-05T10:46:34.956Z" title="发表于 2023-03-05 18:46:34">2023-03-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/">前端相关</a></span></div><div class="content">
+基本数据类型不能绑定属性和方法属性和方法只能添加给对象，不能添加给基本数据类型。我们拿字符串来举例。
+1、基本数据类型：
+基本数据类型string是无法绑定属性和方法的。
+12345var str = &#x27;qianguyihao&#x27;;str.aaa = 12;console.log(typeof str); //打印结果为：stringconsole.log(str.aaa); //打印结果为：undefined
+
+上方代码中，当我们尝试打印str.aaa的时候，会发现打印结果为：undefined。也就是说，不能给 string 绑定属性和方法。
+当然，我们可以打印 str.length、str.indexOf(“m”)等等。因为这两个方法的底层做了数据类型转换（临时将 string 字符串转换为 String 对象，然后再调用内置方法），也就是我们在下一段将要讲到的包装类。
+2、引用数据类型：
+引用数据类型String是可以绑定属性和方法的。如下：
+12345var strObj = new String(&#x27;smyhvae&#x27;);strObj.a ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/53172.html" title="13-对象简介">13-对象简介</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-05T10:46:34.952Z" title="发表于 2023-03-05 18:46:34">2023-03-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/">前端相关</a></span></div><div class="content">
+对象简介对象的概念在 JavaScript 中，对象是一组无序的相关属性和方法的集合。
+对象的作用是：封装信息。比如 Student 类里可以封装学生的姓名、年龄、成绩等。
+对象具有特征（属性）和行为（方法）。
+对象包括哪些数据类型我们知道，JS 中的数据类型，包括以下几种：
+
+基本数据类型（值类型）：String 字符串、Number 数值、BigInt 大型数值、Boolean 布尔值、Null 空值、Undefined 未定义、Symbol。
+
+引用数据类型（引用类型）：Object 对象。
+
+
+只要不是那七种基本数据类型，就全都是对象。对象属于一种复合的数据类型，在对象中可以保存多个不同数据类型的属性。
+对象的分类1、内置对象：
+
+由 ES 标准中定义的对象，在任何的 ES 的实现中都可以使用。
+
+比如：Object、Math、Date、String、Array、Number、Boolean、Function 等。
+
+
+2、宿主对象：
+
+由 JS 的运行环境提供的对象，目前来讲主要指由浏览器提供的对象。
+
+比如 BOM、DOM，比如console、document。
+
+
+3、 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/40363.html" title="12-流程控制语句：循环结构（for和while）">12-流程控制语句：循环结构（for和while）</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-05T10:46:34.950Z" title="发表于 2023-03-05 18:46:34">2023-03-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/">前端相关</a></span></div><div class="content">
+前言循环语句：通过循环语句可以反复执行一段代码多次。
+for 循环for 循环的语法语法：
+123for(①初始化表达式; ②条件表达式; ④更新表达式)&#123;	③语句...&#125;
+
+执行流程：
+1234567①执行初始化表达式，初始化变量（初始化表达式只会执行一次）②执行条件表达式，判断是否执行循环：	如果为true，则执行循环③	如果为false，终止循环④执行更新表达式，更新表达式执行完毕继续重复②
+
+for 循环举例：
+123for (let i = 1; i &lt;= 100; i++) &#123;    console.log(i);&#125;
+
+上方代码的解释：i 是循环变量，1 是初始值，i&lt;100是执行条件，i++是步长。
+for 循环举例123for (let i = 1; i &lt; 13; i = i + 4) &#123;    console.log(i);&#125;
+
+上方代码的遍历步骤：
+12345678910111213程序一运行，将执行let i = 1;这条语句， 所以i的值是1。然后程序会验证一下i &lt; 13是 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/14189.html" title="11-流程控制语句：选择结构（if和switch）">11-流程控制语句：选择结构（if和switch）</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-05T10:46:34.945Z" title="发表于 2023-03-05 18:46:34">2023-03-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/">前端相关</a></span></div><div class="content">
+代码块用&#123;&#125;包围起来的代码，就是代码块。
+在 ES5 语法中，代码块，只具有分组的作用，没有其他的用途。代码块中的内容，在外部是完全可见的。举例：
+1234567&#123;    var a = 2;    alert(&#x27;qianguyihao&#x27;);    console.log(&#x27;千古壹号&#x27;);&#125;console.log(&#x27;a = &#x27; + a);
+
+打印结果：（可以看出，虽然变量 a 是定义在代码块中的，但是在外部依然可以访问）
+12千古壹号a = 2
+
+流程控制语句在一个程序执行的过程中，各条语句的执行顺序对程序的结果是有直接影响的。所以，我们必须清楚每条语句的执行流程。而且，很多时候我们要通过控制语句的执行顺序来实现我们想要的业务逻辑和功能。
+流程控制语句分类
+顺序结构
+
+选择结构：if 语句、switch 语句
+
+循环结构：while 语句、for 语句
+
+
+顺序结构按照代码的先后顺序，依次执行。结构图如下：
+
+if 语句if 语句有以下三种形式。
+if 语句的三种形式形式1：（条件成立 ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/page/5/#content-inner"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/#content-inner">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/#content-inner">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/#content-inner">11</a><a class="extend next" rel="next" href="/page/7/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Jerry</div><div class="author-info__description">生活明朗,万物可爱.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">110</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/38021.html" title="17-Vue组件">17-Vue组件</a><time datetime="2023-03-08T15:18:33.592Z" title="发表于 2023-03-08 23:18:33">2023-03-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/39425.html" title="16-Vue开发积累">16-Vue开发积累</a><time datetime="2023-03-08T15:18:33.585Z" title="发表于 2023-03-08 23:18:33">2023-03-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/31030.html" title="15-route路由">15-route路由</a><time datetime="2023-03-08T15:18:33.579Z" title="发表于 2023-03-08 23:18:33">2023-03-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/11065.html" title="14-Vue.js再开发中的常见写法积累">14-Vue.js再开发中的常见写法积累</a><time datetime="2023-03-08T15:18:33.571Z" title="发表于 2023-03-08 23:18:33">2023-03-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/14968.html" title="13-Vue-router路由">13-Vue-router路由</a><time datetime="2023-03-08T15:18:33.563Z" title="发表于 2023-03-08 23:18:33">2023-03-08</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
             <i class="fas fa-folder-open"></i>
             <span>分类</span>
             
             </div>
             <ul class="card-category-list" id="aside-cat-list">
-            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/"><span class="card-category-list-name">前端相关</span><span class="card-category-list-count">93</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/"><span class="card-category-list-name">版本管理</span><span class="card-category-list-count">1</span></a></li>
-            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/Git/" style="font-size: 1.1em; color: #999">Git</a> <a href="/tags/JavaScript%E5%9F%BA%E7%A1%80/" style="font-size: 1.5em; color: #99a9bf">JavaScript基础</a> <a href="/tags/CSS%E8%BF%9B%E9%98%B6/" style="font-size: 1.2em; color: #999da3">CSS进阶</a> <a href="/tags/HTML/" style="font-size: 1.3em; color: #99a1ac">HTML</a> <a href="/tags/CSS/" style="font-size: 1.4em; color: #99a5b6">CSS</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">三月 2023</span><span class="card-archive-list-count">93</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2017/01/"><span class="card-archive-list-date">一月 2017</span><span class="card-archive-list-count">1</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">94</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-03-05T11:12:42.294Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Jerry</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/"});</script></body></html>
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/"><span class="card-category-list-name">前端相关</span><span class="card-category-list-count">109</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/"><span class="card-category-list-name">版本管理</span><span class="card-category-list-count">1</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/CSS/" style="font-size: 1.42em; color: #99a6b7">CSS</a> <a href="/tags/Git/" style="font-size: 1.1em; color: #999">Git</a> <a href="/tags/JavaScript%E5%9F%BA%E7%A1%80/" style="font-size: 1.5em; color: #99a9bf">JavaScript基础</a> <a href="/tags/VUE/" style="font-size: 1.34em; color: #99a3b0">VUE</a> <a href="/tags/HTML/" style="font-size: 1.26em; color: #999fa8">HTML</a> <a href="/tags/CSS%E8%BF%9B%E9%98%B6/" style="font-size: 1.18em; color: #999ca1">CSS进阶</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">三月 2023</span><span class="card-archive-list-count">109</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2017/01/"><span class="card-archive-list-date">一月 2017</span><span class="card-archive-list-count">1</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">110</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-03-08T15:19:28.893Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Jerry</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/"});</script></body></html>

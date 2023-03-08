@@ -55,7 +55,7 @@
   isHome: true,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2023-03-05 19:12:43'
+  postUpdate: '2023-03-08 23:19:30'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -159,182 +159,178 @@
       }
     }
     detectApple()
-    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">94</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Jerry's Blog"><span class="site-name">Jerry's Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Jerry's Blog</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/8596.html" title="44-键盘事件">44-键盘事件</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-05T10:46:35.051Z" title="发表于 2023-03-05 18:46:35">2023-03-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/">前端相关</a></span></div><div class="content">
-鼠标的拖拽事件拖拽的流程：
-（1）onmousedown：当鼠标在被拖拽元素上按下时，开始拖拽；
-（2）onmousemove：当鼠标移动时被拖拽元素跟随鼠标移动；
-（3）onmouseup：当鼠标松开时，被拖拽元素固定在当前位置。
-鼠标的滚轮事件onmousewheel：鼠标滚轮滚动的事件，会在滚轮滚动时触发。但是火狐不支持该属性。
-DOMMouseScroll：在火狐中需要使用 DOMMouseScroll 来绑定滚动事件。注意该事件需要通过addEventListener()函数来绑定。
-键盘事件事件名onkeydown：按键被按下。
-onkeyup：按键被松开。
-注意：
-
-如果一直按着某一个按键不松手，那么，onkeydown事件会一直触发。此时，松开键盘，onkeyup事件会执行一次。
-
-当onkeydown连续触发时，第一次和第二次之间会间隔稍微长一点，后续的间隔会非常快。这种设计是为了防止误操作的发生。
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">110</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="Jerry's Blog"><span class="site-name">Jerry's Blog</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Jerry's Blog</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/644.html" title="07-自定义按键修饰符&amp;自定义指令">07-自定义按键修饰符&amp;自定义指令</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-08T15:18:33.524Z" title="发表于 2023-03-08 23:18:33">2023-03-08</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/">前端相关</a></span></div><div class="content">
+v-on的按键修饰符Vue 内置的按键修饰符通俗一点讲，指的是：监听键盘输入的事件。Vue 允许为 v-on 在监听键盘事件时添加按键修饰符。如下：
+Vue内置的按键修饰符：
+12345678910.enter.tab.delete (捕获 “删除” 和 “退格” 键).esc.space.up.down.left.right1.0.8+版本：支持单字母的按键别名。
 
 
-键盘事件一般都会绑定给一些可以获取到焦点的对象或者是document。代码举例：
-1234567891011121314&lt;body&gt;    &lt;sc ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/14071.html" title="43-事件委托">43-事件委托</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-05T10:46:35.048Z" title="发表于 2023-03-05 18:46:35">2023-03-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/">前端相关</a></span></div><div class="content">
-事件委托事件委托，通俗地来讲，就是把一个元素响应事件（click、keydown……）的函数委托到另一个元素。
-比如说有一个列表 ul，列表之中有大量的列表项 &lt;a&gt;标签：
-12345&lt;ul id=&quot;parent-list&quot;&gt;    &lt;li&gt;&lt;a href=&quot;javascript:;&quot; class=&quot;my_link&quot;&gt;超链接一&lt;/a&gt;&lt;/li&gt;    &lt;li&gt;&lt;a href=&quot;javascript:;&quot; class=&quot;my_link&quot;&gt;超链接二&lt;/a&gt;&lt;/li&gt;    &lt;li&gt;&lt;a href=&quot;javascript:;&quot; class=&quot;my_link&quot;&gt;超链接三&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+比如说，keyup指的是：键盘（任何键位）抬起时的监听事件。.enter指的是：按enter键的按键修饰符。我们把这两个结合起来看看。
+@keyup.enter举例：按enter键后的监听事件
+@keyup.enter=&quot;addData&quot;表示：按住enter键后，执行addData()方法。全称是v-on:key.enter=&quot;addData&quot;。
+我们还是拿01-04这篇文章中的列表功能来举例。之前是点击“添加”按钮后，列表中会添加一个item。现在要求：在输入框中按enter键后，也能添加一个item。
+核心代码如下：
+1&lt;input type=&quot;text&q ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/50153.html" title="06-自定义过滤器：时间格式化举例">06-自定义过滤器：时间格式化举例</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-08T15:18:33.515Z" title="发表于 2023-03-08 23:18:33">2023-03-08</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/">前端相关</a></span></div><div class="content">
+前言
+我们接着上一篇文章01-04来讲。
 
-当我们的鼠标移到&lt;a&gt;标签上的时候，需要获取此&lt;a&gt;的 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/4120.html" title="42-事件的传播和事件冒泡">42-事件的传播和事件冒泡</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-05T10:46:35.045Z" title="发表于 2023-03-05 18:46:35">2023-03-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/">前端相关</a></span></div><div class="content">
-DOM事件流事件传播的三个阶段是：事件捕获、事件冒泡和目标。
+过滤器的概念概念：Vue.js 允许我们自定义过滤器，可被用作一些常见的文本格式化。过滤器可以用在两个地方：mustache 插值表达式、 v-bind表达式。过滤器应该被添加在 JavaScript 表达式的尾部，由“管道”符指示。
+Vue1.X中的系统过滤器Vue提供了一系列的固定逻辑来使程序员更加容易的实现这些功能，这些过滤器称之为系统过滤器。
+系统过滤器是Vue1.0中存在的，在Vue2.0中已经删除了。
+系统过滤器的使用，可以参考参考文档：http://v1-cn.vuejs.org/api/#过滤器
+Vue也提供了一个接口用来供程序员定义属于自己的特殊逻辑，Vue称之为自定义过滤器。我们接下来讲一讲。
+自定义全局过滤器文档地址：http://v1-cn.vuejs.org/guide/custom-filter.html
+全局过滤器的基本使用我们可以用全局方法Vue.filter()自定义一个全局过滤器。这样的话，每一个Vue的对象实例（每一个VM实例）都可以拿到这个过滤器。它接收两个参数：过滤器的名称 、过滤器函数。
+比如说， ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/62619.html" title="05-Vue的举例：列表功能">05-Vue的举例：列表功能</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-08T15:18:33.509Z" title="发表于 2023-03-08 23:18:33">2023-03-08</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/">前端相关</a></span></div><div class="content">
+列表功能举例步骤 1：列表功能完整的代码如下：
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566&lt;!DOCTYPE html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;    &lt;meta charset=&quot;UTF-8&quot;&gt;    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;    &lt;title&gt;Document&lt;/title&gt;    &lt;style&gt;       ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/45875.html" title="03-v-on的事件修饰符">03-v-on的事件修饰符</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-08T15:18:33.503Z" title="发表于 2023-03-08 23:18:33">2023-03-08</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/">前端相关</a></span></div><div class="content">
+前言本文主要内容：
 
-事件捕获阶段：事件从祖先元素往子元素查找（DOM树结构），直到捕获到事件目标 target。在这个过程中，默认情况下，事件相应的监听函数是不会被触发的。
+v-model
 
-事件目标：当到达目标元素之后，执行目标元素该事件相应的处理函数。如果没有绑定监听函数，那就不执行。
+v-for
 
-事件冒泡阶段：事件从事件目标 target 开始，从子元素往冒泡祖先元素冒泡，直到页面的最上一级标签。
+v-if
+
+v-show
 
 
-如下图所示：
+v-model：双向数据绑定
+重点：双向数据绑定，只能用于表单元素，或者用于自定义组件。
 
-PS：这个概念类似于 Android 里的 touch 事件传递。
-事件捕获addEventListener可以捕获事件：
-123box1.addEventListener(&quot;click&quot;, function () &#123;    alert(&quot;捕获 box3&quot;);&#125;, true);
+之前的文章里，我们通过v-bind，给&lt;input&gt;标签绑定了data对象里的name属性。当data里的name的值发生改变时，&lt;input&gt;标签里的内容会自动更新。
+可我现在要做的是：我在&lt;input&gt;标签里修改内容，要求data里的name的值自动更新。从而实现双向数据绑定。该怎么做呢？这就可以利用v-model这个属性。
+区别：
 
-上面的方法中，参数为true，代表事件在捕获阶段执行。
-代码演示：
-12345678910111213141516//参数为true，代表事件在「捕获」阶段触发；参数为false或者不写参数，代表事件在「冒泡」 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/45873.html" title="41-事件的绑定和事件对象Event">41-事件的绑定和事件对象Event</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-05T10:46:35.042Z" title="发表于 2023-03-05 18:46:35">2023-03-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/">前端相关</a></span></div><div class="content">
-绑定事件的两种方式&#x2F;DOM事件的级别我们在之前的一篇文章《04-JavaScript&#x2F;22-DOM简介和DOM操作》中已经讲过事件的概念。这里讲一下绑定（注册）事件的两种方式，我们以onclick事件为例。
-DOM0的写法：onclick123element.onclick = function () &#123;&#125;
+v-bind：只能实现数据的单向绑定，从 M 自动绑定到 V。
 
+v-model：只有v-model才能实现双向数据绑定。注意，v-model 后面不需要跟冒号，
+
+
+注意：v-model 只能运用在表单元素中，或者用于自定义组件。常见的表单元素包括：input(radio, text, address, email….) 、select、checkbox 、textarea。
+代码举例如下：
+12345678910111213141516 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/45874.html" title="03-v-on的事件修饰符">03-v-on的事件修饰符</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-08T15:18:33.496Z" title="发表于 2023-03-08 23:18:33">2023-03-08</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/">前端相关</a></span></div><div class="content">
+v-on的事件修饰符v-on的常见事件修饰符v-on 提供了很多事件修饰符来辅助实现一些功能。事件修饰符有如下：
+
+.stop  阻止冒泡。本质是调用 event.stopPropagation()。
+
+.prevent  阻止默认事件（默认行为）。本质是调用 event.preventDefault()。
+
+.capture  添加事件监听器时，使用捕获的方式（也就是说，事件采用捕获的方式，而不是采用冒泡的方式）。
+
+.self  只有当事件在该元素本身（比如不是子元素）触发时，才会触发回调。
+
+.once  事件只触发一次。
+
+.&#123;keyCode | keyAlias&#125;   只当事件是从侦听器绑定的元素本身触发时，才触发回调。
+
+.native 监听组件根元素的原生事件。
+
+
+PS：一个事件，允许同时使用多个事件修饰符。
+写法示范：
+1234567891011121314151617181920  &lt;!-- click事件 --&gt;&lt;button v-on:click=&quot;doThis&quot;&gt;&lt;/button&gt;& ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/18837.html" title="01-Vue的介绍和vue-cli">01-Vue的介绍和vue-cli</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-08T15:18:33.454Z" title="发表于 2023-03-08 23:18:33">2023-03-08</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/">前端相关</a></span></div><div class="content">
+MVVM模式
+
+Model：负责数据存储
+
+View：负责页面展示
+
+View Model：负责业务逻辑处理（比如Ajax请求等），对数据进行加工后交给视图展示
+
+
+关于框架为什么要学习流行框架1、企业为了提高开发效率：在企业中，时间就是效率，效率就是金钱；企业中，使用框架，能够提高开发的效率。
+提高开发效率的发展历程：
+原生JS -&gt; Jquery之类的类库 -&gt; 前端模板引擎 -&gt; Angular.js &#x2F; Vue.js（能够帮助我们减少不必要的DOM操作；提高渲染效率；双向数据绑定的概念）
+2、在Vue中，一个核心的概念就是：数据驱动，避免手动操作DOM元素。这样的话，可以让前端程序员可以更多的时间去关注数据的业务逻辑，而不是关心 DOM 是如何渲染的了。
+框架和库的区别框架：
+框架是一套完整的解决方案。
+对项目的侵入性较大，项目如果需要更换框架，则需要重新架构整个项目。但是优点也很明显：功能完善、提供了一整套的解决方案。
+库（插件）：
+只是提供某一个小功能。
+对项目的侵入性较小，如果某个库无法完成某些需求，可以很容易切换到其它库实现需求。
 举例：
-1234567891011121314151617&lt;body&gt;&lt;button&gt;点我&lt;/button&gt;&lt;script&gt;    var btn = document.getElementsByTagName(&quot;button&quot;)[0];    //这种事件绑定的方式，如果绑定多个，则后面的会覆盖掉前面的    btn.onclick = function () &#123;        console.log(&quot;事件1&quot;);    &#125;    btn.onclick = function () &#123;        console.l ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/44120.html" title="40-client（可视区）相关属性">40-client（可视区）相关属性</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-05T10:46:35.039Z" title="发表于 2023-03-05 18:46:35">2023-03-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/">前端相关</a></span></div><div class="content">
-client 家族的组成clientWidth 和 clientHeight元素调用时：
-
-clientWidth：获取元素的可见宽度（width + padding）。
-
-clientHeight：获取元素的可见高度（height + padding）。
+ ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/55595.html" title="常见代码解读">常见代码解读</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-05T10:46:35.084Z" title="发表于 2023-03-05 18:46:35">2023-03-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/">前端相关</a></span></div><div class="content">callback &amp;&amp; callback()的含义1callback &amp;&amp; callback()
 
 
-body&#x2F;html 调用时：
-
-clientWidth：获取网页可视区域宽度。
-
-clientHeight：获取网页可视区域高度。
+含义是：如果callback存在，则执行callback()函数。
+这个 callback 通常作为函数的参数使用。举例：
+123456789function foo(callback) &#123;    &#123;        // do something    &#125;    callback &amp;&amp; callback() // 不传 callback 参数，则不会执行 callback() 函数&#125;foo(); // 只执行do something中的代码foo(callback);//callback是另一个函数，将此函数传入 foo，将会执行callback()
 
 
-声明：
 
-clientWidth 和 clientHeight 属性是只读的，不可修改。
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/2233.html" title="原型链">原型链</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-05T10:46:35.081Z" title="发表于 2023-03-05 18:46:35">2023-03-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/">前端相关</a></span></div><div class="content">常见概念
+构造函数
 
-clientWidth 和 clientHeight 的值都是不带 px 的，返回的都是一个数字，可以直接进行计算。
+构造函数-扩展
 
+原型规则和示例
 
-clientX 和 clientYevent调用：
+原型链
 
-clientX：鼠标距离可视区域左侧距离。
-
-clientY：鼠标距离可视区域上侧距离。
-
-
-clientTop 和 clientLeft
-clientTop：盒子的上border。
-
-clientLeft：盒子的左border。
+instanceof
 
 
-三大家族 offset&#x2F;scroll&#x2F;client 的区别区别1： ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/55427.html" title="39-scroll相关属性和缓动动画">39-scroll相关属性和缓动动画</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-05T10:46:35.036Z" title="发表于 2023-03-05 18:46:35">2023-03-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/">前端相关</a></span></div><div class="content">
-scroll 相关属性window.onscroll() 方法当我们用鼠标滚轮，滚动网页的时候，会触发 window.onscroll() 方法。效果如下：（注意看控制台的打印结果）
+构造函数任何一个函数都可以被 new，new 了之后，就成了构造方法。
+如下：
+12345678function Foo(name, age) &#123;    this.name = name;    this.age = age;    //retrun this;   //默认有这一行。new一个构造函数，返回一个对象&#125;var fn1 = new Foo(&#x27;smyhvae&#x27;, 26);var fn2 = new Foo(&#x27;vae&#x27;, 30); //new 多个实例对象
 
-如果你需要做滚动监听，可以使用这个方法。
-我们来看看和 scroll 相关的有哪些属性。
-1、ScrollWidth 和 scrollHeightScrollWidth 和 scrollHeight：获取元素整个滚动区域的宽、高。包括 width 和 padding，不包括 border和margin。
-注意：
-scrollHeight 的特点是：如果内容超出了盒子，scrollHeight为内容的高（包括超出的内容）；如果不超出，scrollHeight为盒子本身的高度。ScrollWidth同理。
-12345678910111213141516171819202122232425262728293031323334353637&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head lang=&quot;en&quot;&gt;    &lt;meta charset=& ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/38415.html" title="38-offset相关属性和匀速动画（含轮播图的实现）">38-offset相关属性和匀速动画（含轮播图的实现）</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-05T10:46:35.033Z" title="发表于 2023-03-05 18:46:35">2023-03-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/">前端相关</a></span></div><div class="content">
-前言JS动画的主要内容如下：
-1、三大家族和一个事件对象：
+与普通函数相比，构造函数有以下明显特点：
 
-三大家族：offset&#x2F;scroll&#x2F;client。也叫三大系列。
+用 new 关键字调用。
 
-事件对象&#x2F;event（事件被触动时，鼠标和键盘的状态）（通过属性控制）。
+不需要用 return 显式返回值的，默认会返回 this，也就是新的实例对象。
+
+建议函数名的首字母大写，与普通函数区分开。
 
 
-2、动画(闪现&#x2F;匀速&#x2F;缓动)
-3、冒泡&#x2F;兼容&#x2F;封装
-offset 家族的组成我们知道，JS动画的三大家族包括：offset&#x2F;scroll&#x2F;client。今天来讲一下offset，以及与其相关的匀速动画。
+参考链接：
 
-offset的中文是：偏移，补偿，位移。
+JavaScript 中的普通函数与构造函数
 
-js中有一套方便的获取元素尺寸的办法就是offset家族。offset家族包括：
+当 new 之后，this 会先变成一个空对象，然后通过this.name = name来赋值。
+构造函数 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/17586.html" title="原型对象">原型对象</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-05T10:46:35.078Z" title="发表于 2023-03-05 18:46:35">2023-03-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/">前端相关</a></span></div><div class="content">
+在看本文之前，我们可以先复习上一篇文章：《03-JavaScript基础&#x2F;12-对象的创建&amp;构造函数.md》
 
-offsetWidth
-
-offsetHight
-
-offsetLeft
-
-offsetTop
-
-offsetParent
+原型对象原型的引入1234567891011121314151617function Person(name, age, gender) &#123;    this.name = name;    this.age = age;    this.gender = gender;    //向对象中添加一个方法    this.sayName = function () &#123;        console.log(&quot;我是&quot; + this.name);    &#125;&#125;//创建一个Person的实例var per = new Person(&quot;孙悟空&quot;, 18, &quot;男&quot;);var per2 = new Person(&quot;猪八戒&quot;, 28, &quot;男&quot;);per.sayName();per2.sayName();console.log(per.sa ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/45680.html" title="BOM的常见内置方法和内置对象">BOM的常见内置方法和内置对象</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-05T10:46:35.075Z" title="发表于 2023-03-05 18:46:35">2023-03-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/">前端相关</a></span></div><div class="content">
+本文最初发表于博客园，并在GitHub上持续更新前端的系列文章。欢迎在GitHub上关注我，一起入门和进阶前端。
 
 
-下面分别介绍。
-1、offsetWidth 和 offsetHightoffsetWidth 和 offsetHight：获取元素的宽高 + padding + border，不包括margin。如下：
+以下是正文。
 
-offsetWidth &#x ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/47576.html" title="37-通过style对象获取和设置行内样式">37-通过style对象获取和设置行内样式</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-05T10:46:35.030Z" title="发表于 2023-03-05 18:46:35">2023-03-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/">前端相关</a></span></div><div class="content">
-style属性的获取和修改在DOM当中，如果想设置样式，有两种形式：
-
-className（针对内嵌样式）
-
-style（针对行内样式）
-
-
-这篇文章，我们就来讲一下style。
-需要注意的是：style是一个对象，只能获取行内样式，不能获取内嵌的样式和外链的样式。例如：
-12345678910111213141516171819202122232425&lt;!DOCTYPE html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;    &lt;meta charset=&quot;UTF-8&quot;&gt;    &lt;title&gt;Title&lt;/title&gt;    &lt;style&gt;        div &#123;            border: 6px solid red;        &#125;    &lt;/style&gt;&lt;/head&gt;&lt;body&gt;    &lt;div class=&quot;box1&quot; style=&quot;width ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/18356.html" title="36-DOM简介和DOM操作">36-DOM简介和DOM操作</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-05T10:46:35.027Z" title="发表于 2023-03-05 18:46:35">2023-03-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/">前端相关</a></span></div><div class="content">
-常见概念JavaScript的组成JavaScript基础分为三个部分：
+BOM的介绍JavaScript的组成JavaScript基础分为三个部分：
 
 ECMAScript：JavaScript的语法标准。包括变量、表达式、运算符、函数、if语句、for语句等。
 
-DOM：文档对象模型（Document object Model），操作网页上的元素的API。比如让盒子移动、变色、轮播图等。
+DOM：文档对象模型，操作网页上的元素的API。比如让盒子移动、变色、轮播图等。
 
-BOM：浏览器对象模型（Browser Object Model），操作浏览器部分功能的API。比如让浏览器自动滚动。
-
-
-节点节点（Node）：构成 HTML 网页的最基本单元。网页中的每一个部分都可以称为是一个节点，比如：html标签、属性、文本、注释、整个文档等都是一个节点。
-虽然都是节点，但是实际上他们的具体类型是不同的。常见节点分为四类：
-
-文档节点（文档）：整个 HTML 文档。整个 HTML 文档就是一个文档节点。
-
-元素节点（标签）：HTML标签。
-
-属性节点（属性）：元素的属性。
-
-文本节点（文本）：HTML标签中的文本内容（包括标签之间的空格、换行）。
+BOM：浏览器对象模型，操作浏览器部分功能的API。比如让浏览器自动滚动。
 
 
-节点的类型不同，属性和方法也都不尽相同。所有的节点都是Object。
-什么是DOMDOM：Do ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/posts/19611.html" title="35-事件简介">35-事件简介</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-03-05T10:46:35.024Z" title="发表于 2023-03-05 18:46:35">2023-03-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/">前端相关</a></span></div><div class="content">
-事件简介事件：就是文档或浏览器窗口中发生的一些特定的交互瞬间。对于 Web 应用来说，有下面这些代表性的事件：点击某个元素、将鼠标移动至某个元素上方、关闭弹窗等等。
-JavaScript 是以事件驱动为核心的一门语言。JavaScript 与 HTML 之间的交互是通过事件实现的。
-事件的三要素事件的三要素：事件源、事件、事件驱动程序。
-比如，我用手去按开关，灯亮了。这件事情里，事件源是：手。事件是：按开关。事件驱动程序是：灯开了或者关了。
-再比如，网页上弹出一个广告，我点击右上角的X，广告就关闭了。这件事情里，事件源是：X。事件是：onclick。事件驱动程序是：广告关闭了。
-于是我们可以总结出：谁引发的后续事件，谁就是事件源。
-总结如下：
+什么是BOMBOM：Browser Object Model，浏览器对象模型。
+BOM的结构图：
 
-事件源：引发后续事件的html标签。
+从上图也可以看出：
 
-事件：js已经定义好了（见下图）。
+window对象是BOM的顶层(核心)对象，所有对象都是通过它延伸出来的，也可以称为window的子对象。
 
-事件驱动程序：对样式和html的操作。也就是DOM。
+DOM越是BOM的一部分。
 
 
-也就是说，我们可以在时间对应的属性中写一些js代码，当事件被触发时，这些代码将会执行。
-代码书写步骤如下：（重要）
+window对象：
 
-（1）获取事件源：document.getElementById(“box”);   &# ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/#content-inner">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/#content-inner">10</a><a class="extend next" rel="next" href="/page/3/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Jerry</div><div class="author-info__description">生活明朗,万物可爱.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">94</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/55595.html" title="常见代码解读">常见代码解读</a><time datetime="2023-03-05T10:46:35.084Z" title="发表于 2023-03-05 18:46:35">2023-03-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/2233.html" title="原型链">原型链</a><time datetime="2023-03-05T10:46:35.081Z" title="发表于 2023-03-05 18:46:35">2023-03-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/17586.html" title="原型对象">原型对象</a><time datetime="2023-03-05T10:46:35.078Z" title="发表于 2023-03-05 18:46:35">2023-03-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/45680.html" title="BOM的常见内置方法和内置对象">BOM的常见内置方法和内置对象</a><time datetime="2023-03-05T10:46:35.075Z" title="发表于 2023-03-05 18:46:35">2023-03-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/2572.html" title="50-jQuery的事件机制和其他知识">50-jQuery的事件机制和其他知识</a><time datetime="2023-03-05T10:46:35.072Z" title="发表于 2023-03-05 18:46:35">2023-03-05</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+window对象是JavaScript中的顶级对象。
+
+全局变量、自定义函数也是window对象的属性和方法。
+
+window对象下的属性和方法调用时，可以省略window。
+
+
+下面讲一下 BOM 的常见内置方法和内置 ...</div></div></div><nav id="pagination"><div class="pagination"><a class="extend prev" rel="prev" href="/"><i class="fas fa-chevron-left fa-fw"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/#content-inner">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/#content-inner">11</a><a class="extend next" rel="next" href="/page/3/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Jerry</div><div class="author-info__description">生活明朗,万物可爱.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">110</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/38021.html" title="17-Vue组件">17-Vue组件</a><time datetime="2023-03-08T15:18:33.592Z" title="发表于 2023-03-08 23:18:33">2023-03-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/39425.html" title="16-Vue开发积累">16-Vue开发积累</a><time datetime="2023-03-08T15:18:33.585Z" title="发表于 2023-03-08 23:18:33">2023-03-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/31030.html" title="15-route路由">15-route路由</a><time datetime="2023-03-08T15:18:33.579Z" title="发表于 2023-03-08 23:18:33">2023-03-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/11065.html" title="14-Vue.js再开发中的常见写法积累">14-Vue.js再开发中的常见写法积累</a><time datetime="2023-03-08T15:18:33.571Z" title="发表于 2023-03-08 23:18:33">2023-03-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/14968.html" title="13-Vue-router路由">13-Vue-router路由</a><time datetime="2023-03-08T15:18:33.563Z" title="发表于 2023-03-08 23:18:33">2023-03-08</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
             <i class="fas fa-folder-open"></i>
             <span>分类</span>
             
             </div>
             <ul class="card-category-list" id="aside-cat-list">
-            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/"><span class="card-category-list-name">前端相关</span><span class="card-category-list-count">93</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/"><span class="card-category-list-name">版本管理</span><span class="card-category-list-count">1</span></a></li>
-            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/Git/" style="font-size: 1.1em; color: #999">Git</a> <a href="/tags/JavaScript%E5%9F%BA%E7%A1%80/" style="font-size: 1.5em; color: #99a9bf">JavaScript基础</a> <a href="/tags/CSS%E8%BF%9B%E9%98%B6/" style="font-size: 1.2em; color: #999da3">CSS进阶</a> <a href="/tags/HTML/" style="font-size: 1.3em; color: #99a1ac">HTML</a> <a href="/tags/CSS/" style="font-size: 1.4em; color: #99a5b6">CSS</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">三月 2023</span><span class="card-archive-list-count">93</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2017/01/"><span class="card-archive-list-date">一月 2017</span><span class="card-archive-list-count">1</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">94</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-03-05T11:12:42.294Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Jerry</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/"});</script></body></html>
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3/"><span class="card-category-list-name">前端相关</span><span class="card-category-list-count">109</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/"><span class="card-category-list-name">版本管理</span><span class="card-category-list-count">1</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/CSS/" style="font-size: 1.42em; color: #99a6b7">CSS</a> <a href="/tags/Git/" style="font-size: 1.1em; color: #999">Git</a> <a href="/tags/JavaScript%E5%9F%BA%E7%A1%80/" style="font-size: 1.5em; color: #99a9bf">JavaScript基础</a> <a href="/tags/VUE/" style="font-size: 1.34em; color: #99a3b0">VUE</a> <a href="/tags/HTML/" style="font-size: 1.26em; color: #999fa8">HTML</a> <a href="/tags/CSS%E8%BF%9B%E9%98%B6/" style="font-size: 1.18em; color: #999ca1">CSS进阶</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/03/"><span class="card-archive-list-date">三月 2023</span><span class="card-archive-list-count">109</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2017/01/"><span class="card-archive-list-date">一月 2017</span><span class="card-archive-list-count">1</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">110</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-03-08T15:19:28.893Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Jerry</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/"});</script></body></html>
